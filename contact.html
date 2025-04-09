@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>联系我 - 我的摄影网站</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- 导航栏 -->
+  <header>
+    <div class="logo">My Photos</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="portfolio.html">作品集</a></li>
+        <li><a href="about.html">关于我</a></li>
+        <li><a href="contact.html" class="active">联系我</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 联系方式与联系表单 -->
+  <section class="contact-section">
+    <h2>联系我</h2>
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3>我的联系方式</h3>
+        <p>邮箱: example@email.com</p>
+        <p>电话: 123-4567-890</p>
+        <p>微信: myphoto123</p>
+        <p>地址: 北京市某某区 XXX 路 XX 号</p>
+      </div>
+      <div class="contact-form">
+        <h3>给我留言</h3>
+        <form>
+          <label for="name">姓名</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">邮箱</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">留言</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">发送</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer>
+    <p>© 2025 My Photography Website. 保留所有权利.</p>
+  </footer>
+
+</body>
+</html>
