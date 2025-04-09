@@ -1,4 +1,4 @@
-// 简单的轮播效果
+// 簡單的輪播效果
 let currentSlideIndex = 0;
 
 const slides = document.querySelectorAll(".slide");
@@ -28,6 +28,6 @@ function prevSlide() {
 if (prevBtn && nextBtn && slides.length) {
   prevBtn.addEventListener("click", prevSlide);
   nextBtn.addEventListener("click", nextSlide);
-  // 默认显示第一张
+  // 默認顯示第一張
   showSlide(currentSlideIndex);
 }
