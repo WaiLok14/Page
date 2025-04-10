@@ -1,30 +1,98 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>404</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WaiLok Photography - Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- 導航欄 -->
   <header>
-    <div class="logo">WaiLok</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <div class="logo">WaiLok</div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="menu-button">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
   </header>
 
-  <!-- 首頁主圖區 -->
   <section class="hero-image">
-    <img src="images/20241004-DSC_1717.png" alt="Welcome Banner" />
-    <div class="caption">
-      <p></p>
+    <img src="images/20240828-DSC_1077.png" alt="WaiLok Photography Main Visual" />
+  </section>
+
+  <section class="featured-works">
+    <div class="container">
+      <h2>Featured Works</h2>
+      <div class="works-grid">
+        <div class="work-item">
+          <img src="images/20240828-DSC_1147.png" alt="Featured Work" />
+          <div class="work-info">
+            <h3>Natural Light</h3>
+            <p>2024</p>
+          </div>
+        </div>
+        <div class="work-item">
+          <img src="images/20241004-DSC_1717.png" alt="Featured Work" />
+          <div class="work-info">
+            <h3>Urban Landscape</h3>
+            <p>2024</p>
+          </div>
+        </div>
+        <div class="work-item">
+          <img src="images/DSC_1239_merged.JPG" alt="Featured Work" />
+          <div class="work-info">
+            <h3>Light and Shadow</h3>
+            <p>2024</p>
+          </div>
+        </div>
+      </div>
+      <div class="more-link">
+        <a href="portfolio.html">View More Works</a>
+      </div>
     </div>
   </section>
+
+  <section class="about-preview">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>About the Photographer</h2>
+          <p>Hello! I am WaiLok, a photographer passionate about exploring and documenting the world through my lens.</p>
+          <p>I believe photography is not just about pressing the shutter, but about observing, feeling, and telling stories.</p>
+          <a href="about.html" class="btn">Learn More</a>
+        </div>
+        <div class="about-image">
+          <img src="images/20240828-DSC_1077.png" alt="Photographer Photo" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">WaiLok</div>
+        <div class="footer-links">
+          <a href="portfolio.html">Portfolio</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <p class="copyright">© 2024 WaiLok Photography | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
