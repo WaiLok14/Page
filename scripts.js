@@ -77,4 +77,55 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
+  
+  // 燈箱功能
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.querySelector('.lightbox-caption');
+  const lightboxClose = document.querySelector('.lightbox-close');
+  const lightboxImages = document.querySelectorAll('.lightbox-image');
+  
+  // 點擊圖片打開燈箱
+  lightboxImages.forEach(img => {
+    img.addEventListener('click', function() {
+      lightbox.style.display = 'block';
+      lightboxImg.src = this.getAttribute('data-full') || this.src;
+      lightboxCaption.innerHTML = this.alt;
+      
+      // 禁止背景滾動
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  
+  // 點擊關閉按鈕關閉燈箱
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', function() {
+      lightbox.style.display = 'none';
+      
+      // 恢復背景滾動
+      document.body.style.overflow = '';
+    });
+  }
+  
+  // 點擊燈箱背景關閉燈箱
+  if (lightbox) {
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === this) {
+        lightbox.style.display = 'none';
+        
+        // 恢復背景滾動
+        document.body.style.overflow = '';
+      }
+    });
+  }
+  
+  // 按ESC鍵關閉燈箱
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lightbox.style.display === 'block') {
+      lightbox.style.display = 'none';
+      
+      // 恢復背景滾動
+      document.body.style.overflow = '';
+    }
+  });
 });

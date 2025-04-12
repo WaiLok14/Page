@@ -25,10 +25,10 @@
   <section class="gallery-section"> <div class="container">
         <h2 class="tc-heading">系列 1</h2> <div class="gallery-container">
           <div class="gallery-item">
-            <img src="images/photo1.jpg" alt="Photo 1" />
+            <img src="images/photo1.jpg" alt="Photo 1" class="lightbox-image" data-full="images/photo1.jpg" />
           </div>
           <div class="gallery-item">
-            <img src="images/photo2.jpg" alt="Photo 2" />
+            <img src="images/photo2.jpg" alt="Photo 2" class="lightbox-image" data-full="images/photo2.jpg" />
           </div>
           </div>
          <div style="text-align: center; margin-top: 3rem;">
@@ -36,6 +36,13 @@
         </div>
     </div>
   </section>
+
+  <!-- 燈箱結構 -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div class="lightbox-caption"></div>
+  </div>
 
   <footer>
     <div class="container">
