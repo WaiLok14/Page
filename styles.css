@@ -12,7 +12,7 @@
 
 body {
   /* 設定背景色、主要文字顏色、字體、行高與字體平滑 */
-  background-color: #ffffff; /* 改為純白色背景 */
+  background-color: #fafafa; /* 改為純白色背景 */
   color: #333333; /* 更深的主要文字顏色 */
   font-family: 'Noto Sans TC', 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.7;
@@ -21,13 +21,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6{
   /* 標題字體、顏色、間距與字重設定 */
   font-family: 'Noto Serif TC', 'Noto Serif JP', serif;
-  color: #222222; /* 更深的標題顏色 */
+  color: #222222; /*更深的標題顏色 */
   margin-bottom: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.5px; /* 增加字母間距 */
+}
+
+p {
+  font-family: 'Noto Serif TC', 'Noto Serif JP', serif;
 }
 
 a {
@@ -226,7 +230,7 @@ nav li a.active {
   top: 0;
   left: 0;
   z-index: 1;
-  opacity: 0.7; /* 降低不透明度 */
+  opacity: 0.8; /* 降低不透明度 */
 }
 
 .hero-image .caption {
@@ -321,7 +325,7 @@ nav li a.active {
 .works-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 3rem;
   margin: 0 auto;
 }
 
@@ -332,7 +336,7 @@ nav li a.active {
 }
 
 .work-item img {
-  height: 400px;
+  height: 500px;
   width: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
@@ -786,6 +790,8 @@ footer {
 .square-frame {
   aspect-ratio: 1 / 1;
   width: 100%;
+  max-width: 600px; /* 可依需求調整 */
+  margin: 0 auto;
   position: relative;
   overflow: hidden;
   display: flex;
