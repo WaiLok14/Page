@@ -1,32 +1,37 @@
 /* === 全站統一樣式（字體、顏色、背景等） === */
+/* 全域重置，消除瀏覽器預設 margin/padding，統一 box-sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* 設定全站背景色、主字體、字體平滑 */
 body {
-  background-color: #fafafa;
-  color: #333333;
-  font-family: 'Noto Sans TC', 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+  background-color: #fafafa; /* 淡灰色背景 */
+  color: #333333; /* 主文字顏色 */
+  font-family: 'Noto Sans TC', 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif; /* 優先中文字體 */
   line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* 標題字體與樣式 */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Noto Serif TC', 'Noto Serif JP', serif;
+  font-family: 'Noto Serif TC', 'Noto Serif JP', serif; /* 使用襯線字體 */
   color: #222222;
   margin-bottom: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
+/* 段落使用襯線字體 */
 p {
   font-family: 'Noto Serif TC', 'Noto Serif JP', serif;
 }
 
+/* 連結樣式與滑鼠懸停效果 */
 a {
   color: #444444;
   text-decoration: none;
@@ -37,6 +42,7 @@ a:hover {
   color: #a0a0a0;
 }
 
+/* 圖片最大寬度不超過容器，保持比例 */
 img {
   max-width: 100%;
   height: auto;
@@ -44,61 +50,8 @@ img {
 }
 
 /* === 全局樣式 === */
-/*
-* 這一區設定所有元素的預設外距、內距與盒模型，
-* 並定義全站的字體、顏色、行高與平滑字體渲染，
-* 讓整體排版一致且美觀。
-*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  /* 設定背景色、主要文字顏色、字體、行高與字體平滑 */
-  background-color: #fafafa; /* 改為純白色背景 */
-  color: #333333; /* 更深的主要文字顏色 */
-  font-family: 'Noto Sans TC', 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.7;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1, h2, h3, h4, h5, h6{
-  /* 標題字體、顏色、間距與字重設定 */
-  font-family: 'Noto Serif TC', 'Noto Serif JP', serif;
-  color: #222222; /*更深的標題顏色 */
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 0.5px; /* 增加字母間距 */
-}
-
-p {
-  font-family: 'Noto Serif TC', 'Noto Serif JP', serif;
-}
-
-a {
-  /* 連結顏色與滑鼠懸停效果 */
-  color: #444444;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-a:hover {
-  color: #a0a0a0; /* 更淺的懸停顏色 */
-}
-
-img {
-  /* 圖片最大寬度與自動高度，避免溢出 */
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
+/* 通用按鈕樣式 */
 .btn {
-  /* 按鈕樣式：邊框、顏色、間距、滑鼠懸停效果 */
   display: inline-block;
   padding: 10px 20px;
   background-color: transparent;
@@ -116,30 +69,24 @@ img {
 }
 
 /* === 容器與佈局 === */
-/*
-* .container 設定最大寬度與左右內距，
-* section 統一區塊上下留白。
-*/
+/* 主要內容容器，限制最大寬度並置中 */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
+/* 區塊上下間距 */
 section {
-  padding: 5rem 0; /* 增加上下留白 */
+  padding: 5rem 0;
 }
 
 /* === 頭部導航欄 === */
-/*
-* header 設定背景色、內距、固定定位與陰影，
-* 並包含滾動時的樣式變化。
-* transparent-header 設定首頁透明導航欄的樣式。
-*/
+/* 固定於頂部的導航欄，帶陰影與過渡效果 */
 header {
-  background-color: rgba(255, 255, 255, 0.778); /* 半透明背景 */
-  padding: 0.7rem 0; /* 同步調整為較細的高度 */
-  position: fixed; /* 改為固定定位 */
+  background-color: rgba(255, 255, 255, 0.778);
+  padding: 0.7rem 0;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -148,44 +95,47 @@ header {
   transition: all 0.3s ease;
 }
 
-/* 首頁透明導航欄 */
+/* 首頁透明導航欄樣式 */
 .transparent-header {
-  background-color: transparent; /* 完全透明 */
-  box-shadow: none; /* 移除陰影 */
+  background-color: transparent;
+  box-shadow: none;
   position: absolute;
   z-index: 100;
-  padding: 0.7rem 0; /* 同步調整為較細的高度 */
+  padding: 0.7rem 0;
 }
 
 .transparent-header .logo {
-  color: #ffffff; /* 白色文字 */
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* 輕微文字陰影 */
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .transparent-header nav li a {
-  color: #ffffff; /* 白色文字 */
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* 輕微文字陰影 */
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .transparent-header nav li a::after {
-  background-color: #ffffff; /* 白色下劃線 */
+  background-color: #ffffff;
 }
 
 .transparent-header .menu-button span {
-  background-color: #ffffff; /* 白色菜單按鈕 */
+  background-color: #ffffff;
 }
 
+/* 滾動後導航欄樣式 */
 header.scrolled {
-  padding: 0.5rem 0; /* 滾動時更細 */
+  padding: 0.5rem 0;
   background-color: rgba(255, 255, 255, 0.98);
 }
 
+/* 導航內容橫向排列 */
 header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* 網站 Logo 樣式 */
 .logo {
   font-family: 'Noto Serif TC', 'Noto Serif JP', serif;
   font-size: 1.8rem;
@@ -194,15 +144,17 @@ header .container {
   letter-spacing: 1.5px;
 }
 
+/* 導航選單橫向排列，間距 */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 2.8rem; /* 增加連結間距 */
+  gap: 2.8rem;
 }
 
+/* 導航連結樣式與底線動畫 */
 nav li a {
   font-size: 0.9rem;
-  text-transform: uppercase; /* 導航文字大寫 */
+  text-transform: uppercase;
   letter-spacing: 1px;
   color: #444444;
   padding-bottom: 5px;
@@ -220,6 +172,7 @@ nav li a::after {
   transition: width 0.3s ease;
 }
 
+/* 滑鼠懸停或當前頁面底線展開 */
 nav li a:hover::after,
 nav li a.active::after {
   width: 100%;
@@ -230,13 +183,15 @@ nav li a.active {
   font-weight: 500;
 }
 
+/* 行動裝置菜單按鈕（三條線） */
 .menu-button {
-  display: none; /* 在桌面版隱藏 */
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 25px;
   height: 20px;
   cursor: pointer;
+  z-index: 101;
 }
 
 .menu-button span {
@@ -248,25 +203,23 @@ nav li a.active {
 }
 
 /* === 首頁主圖區域 === */
-/*
-* hero-image 設定主圖區域的大小、背景色、對齊方式與內距，
-* 並包含圖片與文字的樣式設定。
-*/
+/* 主視覺區塊，滿版背景圖與置中文字 */
 .hero-image {
   position: relative;
   width: 100%;
-  height: 100vh; /* 全屏高度 */
+  height: 100vh;
   min-height: 600px;
   overflow: hidden;
-  background-color: #f5f5f5; /* 淺灰色背景 */
+  background-color: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   margin-top: 0;
-  padding-top: 80px; /* 為固定導航欄留出空間 */
+  padding-top: 80px;
 }
 
+/* 主圖背景圖設定 */
 .hero-image img {
   width: 100%;
   height: 100%;
@@ -275,9 +228,10 @@ nav li a.active {
   top: 0;
   left: 0;
   z-index: 1;
-  opacity: 0.8; /* 降低不透明度 */
+  opacity: 0.8;
 }
 
+/* 主圖上的文字區塊 */
 .hero-image .caption {
   position: relative;
   z-index: 2;
@@ -286,6 +240,7 @@ nav li a.active {
   max-width: 80%;
 }
 
+/* 主標題樣式 */
 .hero-image .caption h1 {
   font-size: 3.5rem;
   margin-bottom: 1rem;
@@ -294,6 +249,7 @@ nav li a.active {
   letter-spacing: 2px;
 }
 
+/* 主標題下方副標題 */
 .hero-image .caption p {
   font-size: 1.3rem;
   color: #f0f0f0;
@@ -301,49 +257,29 @@ nav li a.active {
   letter-spacing: 1px;
 }
 
-/* 主圖區域的文字樣式 */
+/* 主圖區域底部文字 */
 .hero-text {
   position: absolute;
-  bottom: 8%; /* 調整垂直位置，例如 15% 從底部算起 */
+  bottom: 8%;
   left: 50%;
   transform: translateX(-50%);
   color: #ffffff;
   text-align: center;
   z-index: 2;
-  width: 80%; /* 避免文字太寬 */
+  width: 80%;
   max-width: 600px;
 }
 
 .hero-text p {
   font-family: 'Noto Serif TC', 'Noto Serif JP', serif;
-  font-size: 1rem; /* 調整字體大小 */
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* 添加文字陰影以提高可讀性 */
+  font-size: 1rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   margin: 0;
   letter-spacing: 1px;
 }
 
-/* 響應式調整 */
-@media (max-width: 768px) {
-  .hero-text p {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero-text {
-    bottom: 10%; /* 移動設備上可能需要調整位置 */
-  }
-  .hero-text p {
-    font-size: 1.2rem;
-  }
-}
-
 /* === 精選作品區塊 === */
-/*
-* featured-works 設定精選作品區塊的背景色與文字對齊，
-* works-grid 設定作品網格佈局，
-* work-item 設定作品項目的樣式與滑鼠懸停效果。
-*/
+/* 精選作品區塊背景與標題 */
 .featured-works {
   text-align: center;
   background-color: #fafafa;
@@ -356,6 +292,7 @@ nav li a.active {
   display: inline-block;
 }
 
+/* 精選作品標題底線 */
 .featured-works h2:after {
   content: '';
   position: absolute;
@@ -367,6 +304,7 @@ nav li a.active {
   background-color: #333;
 }
 
+/* 作品網格三欄 */
 .works-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -374,23 +312,28 @@ nav li a.active {
   margin: 0 auto;
 }
 
+/* 單一作品項目樣式 */
 .work-item {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  width: 100%;
 }
 
+/* 作品圖片方形裁切 */
 .work-item img {
-  height: 500px;
   width: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
+/* 滑鼠懸停放大圖片 */
 .work-item:hover img {
   transform: scale(1.05);
 }
 
+/* 作品資訊浮現動畫 */
 .work-info {
   position: absolute;
   bottom: 0;
@@ -420,6 +363,7 @@ nav li a.active {
   opacity: 0.8;
 }
 
+/* 更多連結樣式 */
 .more-link {
   margin-top: 3rem;
 }
@@ -447,16 +391,12 @@ nav li a.active {
 }
 
 /* === 關於預覽區塊 === */
-/*
-* about-preview 設定關於區塊的背景色，
-* about-grid 設定網格佈局，
-* about-text 設定文字樣式，
-* about-image 設定圖片樣式與邊框效果。
-*/
+/* 關於區塊背景 */
 .about-preview {
   background-color: #fafafa;
 }
 
+/* 關於區塊雙欄網格 */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -464,6 +404,7 @@ nav li a.active {
   align-items: center;
 }
 
+/* 關於文字標題與底線 */
 .about-text h2 {
   margin-bottom: 2rem;
   position: relative;
@@ -485,6 +426,7 @@ nav li a.active {
   font-size: 1.1rem;
 }
 
+/* 關於圖片區塊 */
 .about-image {
   overflow: hidden;
   position: relative;
@@ -496,6 +438,7 @@ nav li a.active {
   object-fit: cover;
 }
 
+/* 圖片白色半透明邊框 */
 .about-image:after {
   content: '';
   position: absolute;
@@ -509,18 +452,14 @@ nav li a.active {
 }
 
 /* === 頁腳區域 === */
-/*
-* footer 設定頁腳背景色、文字顏色與內距，
-* footer-content 設定頁腳內容的佈局，
-* footer-logo 設定頁腳標誌樣式，
-* footer-links 設定頁腳連結樣式與滑鼠懸停效果。
-*/
+/* 頁腳背景與文字顏色 */
 footer {
   background-color: #111;
   color: #aaa;
   padding: 4rem 0 2rem;
 }
 
+/* 頁腳內容橫向排列 */
 .footer-content {
   display: flex;
   justify-content: space-between;
@@ -528,6 +467,7 @@ footer {
   margin-bottom: 3rem;
 }
 
+/* 頁腳 Logo 樣式 */
 .footer-logo {
   font-family: 'Noto Serif JP', serif;
   font-size: 1.6rem;
@@ -535,6 +475,7 @@ footer {
   letter-spacing: 1.5px;
 }
 
+/* 頁腳連結橫向排列 */
 .footer-links {
   display: flex;
   gap: 2rem;
@@ -551,6 +492,7 @@ footer {
   color: #fff;
 }
 
+/* 版權宣告 */
 .copyright {
   text-align: center;
   font-size: 0.8rem;
@@ -560,16 +502,13 @@ footer {
 }
 
 /* === 作品集頁面 === */
-/*
-* portfolio-section 設定作品集頁面的頂部留白與文字對齊，
-* gallery-container 設定畫廊網格佈局，
-* gallery-item 設定畫廊項目的樣式與滑鼠懸停效果。
-*/
+/* 作品集區塊頂部間距與置中 */
 .portfolio-section {
-  margin-top: 80px; /* 為固定導航留出空間 */
+  margin-top: 80px;
   text-align: center;
 }
 
+/* 作品集與相簿標題樣式 */
 .portfolio-section h2,
 .gallery-section h2 {
   text-align: center;
@@ -591,6 +530,7 @@ footer {
   background-color: #333;
 }
 
+/* 相簿網格自適應欄數 */
 .gallery-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -598,6 +538,7 @@ footer {
   margin-top: 2rem;
 }
 
+/* 相簿單一項目樣式 */
 .gallery-item {
   overflow: hidden;
   position: relative;
@@ -607,11 +548,12 @@ footer {
 
 .gallery-item img {
   width: 100%;
-  height: 350px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
+/* 懸停時上浮與陰影加深 */
 .gallery-item:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
@@ -622,10 +564,7 @@ footer {
 }
 
 /* === 頁面通用頂部區域 === */
-/*
-* page-hero 設定頁面頂部區域的背景色、內距與文字對齊，
-* 並包含標題的樣式設定。
-*/
+/* 內頁大標題區塊 */
 .page-hero {
   background-color: #f5f5f5;
   text-align: center;
@@ -652,11 +591,7 @@ footer {
 }
 
 /* === 攝影理念區域 === */
-/*
-* philosophy-section 設定攝影理念區域的背景色與內距，
-* philosophy-grid 設定網格佈局，
-* philosophy-item 設定項目的樣式與滑鼠懸停效果。
-*/
+/* 理念區塊背景與標題 */
 .philosophy-section {
   background-color: #f9f9f9;
   padding: 5rem 0;
@@ -681,12 +616,14 @@ footer {
   background-color: #333;
 }
 
+/* 理念三欄網格 */
 .philosophy-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
 }
 
+/* 理念單一項目卡片 */
 .philosophy-item {
   text-align: center;
   padding: 2rem;
@@ -712,43 +649,19 @@ footer {
   line-height: 1.6;
 }
 
-@media (max-width: 992px) {
-  .philosophy-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 576px) {
-  .philosophy-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .page-hero h1 {
-    font-size: 2.2rem;
-  }
-}
-
 /* === 特定中文字體類 === */
-/*
-* tc-text 與 tc-heading 設定特定中文字體，
-* 以便在需要時使用。
-*/
+/* 強制使用台灣思源黑體 */
 .tc-text {
   font-family: 'Noto Sans TC', sans-serif;
 }
 
+/* 強制使用台灣思源明體 */
 .tc-heading {
   font-family: 'Noto Serif TC', serif;
 }
 
 /* === 燈箱效果 === */
-/*
-* lightbox-image 設定燈箱圖片的滑鼠懸停效果，
-* lightbox 設定燈箱的顯示與背景樣式，
-* lightbox-content 設定燈箱內容的動畫效果，
-* lightbox-close 設定關閉按鈕的樣式與滑鼠懸停效果，
-* lightbox-caption 設定燈箱標題的樣式。
-*/
+/* 可點擊放大圖片 */
 .lightbox-image {
   cursor: pointer;
   transition: opacity 0.3s ease;
@@ -758,6 +671,7 @@ footer {
   opacity: 0.9;
 }
 
+/* 燈箱遮罩 */
 .lightbox {
   display: none;
   position: fixed;
@@ -772,6 +686,7 @@ footer {
   backdrop-filter: blur(5px);
 }
 
+/* 燈箱內容圖片動畫 */
 .lightbox-content {
   margin: auto;
   display: block;
@@ -787,6 +702,7 @@ footer {
   to {transform: scale(1); opacity: 1;}
 }
 
+/* 燈箱關閉按鈕 */
 .lightbox-close {
   position: absolute;
   top: 20px;
@@ -805,6 +721,7 @@ footer {
   cursor: pointer;
 }
 
+/* 燈箱下方說明文字 */
 .lightbox-caption {
   margin: auto;
   width: 80%;
@@ -815,70 +732,278 @@ footer {
   height: 50px;
 }
 
-@media (max-width: 768px) {
-  .lightbox-content {
-    max-width: 95%;
-  }
-  
-  .lightbox-close {
-    top: 15px;
-    right: 25px;
-    font-size: 35px;
-  }
+/* === 方形框架 === */
+/* 保持圖片1:1比例的容器 */
+.square-frame {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-/* === 方形框架 === */
-/*
-* square-frame 設定方形框架的比例、大小與對齊方式，
-* square-frame img 設定圖片的大小與顯示方式。
-*/
-.square-frame {
-  aspect-ratio: 1 / 1;
-  width: 100%;
-  max-width: 600px; /* 可依需求調整 */
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.square-frame::before {
+  content: "";
+  display: block;
+  padding-top: 100%; /* 保持1:1的比例 */
 }
 
 .square-frame img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-@media (max-width: 900px) {
+/* === 新增移動裝置導航菜單 === */
+/* 行動裝置全螢幕導覽選單 */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 100;
+  padding: 80px 2rem 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+
+.mobile-nav.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 行動裝置選單內容垂直排列 */
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.mobile-nav li a {
+  font-size: 1.2rem;
+  color: #333;
+  padding: 0.5rem 0;
+  display: block;
+  text-align: center;
+}
+
+/* 菜單按鈕動畫（展開時變成 X） */
+.menu-button.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.menu-button.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-button.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* === 響應式調整 === */
+/* 平板與桌機間的調整 */
+@media (max-width: 1024px) {
   .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .about-grid, .philosophy-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  section {
+    padding: 4rem 0;
+  }
+}
+
+/* 900px 以下，進入行動裝置模式 */
+@media (max-width: 900px) {
+  /* 導航欄調整，隱藏橫向選單，顯示漢堡按鈕 */
+  nav ul {
+    display: none;
+  }
+
+  .menu-button {
+    display: flex;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+
+  /* 主圖文字縮小 */
+  .hero-image .caption h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-image .caption p {
+    font-size: 1.1rem;
+  }
+
+  /* 作品網格改為兩欄 */
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
+
+  /* 方形圖片在行動裝置上正確顯示 */
   .work-item img {
-    height: 300px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
   }
+
+  /* 關於區塊單欄排列 */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-image img {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* 容器左右間距縮小 */
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .philosophy-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 768px 以下，字體與間距再縮小 */
+@media (max-width: 768px) {
+  /* 標題字體縮小 */
+  h1, .hero-image .caption h1 {
+    font-size: 2.5rem;
+  }
+
+  h2, .featured-works h2, .philosophy-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  /* 區塊間距縮小 */
+  section {
+    padding: 3rem 0;
+  }
+
+  .page-hero {
+    padding: 100px 0 40px;
+  }
+
+  /* 頁腳內容垂直排列 */
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  /* 方形圖片容器寬度調整 */
   .square-frame {
+    width: 100%;
     max-width: 100%;
   }
 }
 
+/* 600px 以下，單欄網格與更小字體 */
 @media (max-width: 600px) {
-  .works-grid {
+  /* Logo 字體縮小 */
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  /* 作品與理念網格單欄 */
+  .works-grid, .philosophy-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
   }
-  .work-item img {
-    height: 200px;
+
+  /* 主圖文字縮小 */
+  .hero-image .caption h1 {
+    font-size: 2rem;
   }
+
+  .hero-image .caption p {
+    font-size: 1rem;
+  }
+
+  /* 標題與底線縮小 */
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+  
   .container {
-    padding: 0 0.5rem;
+    padding: 0 1rem;
   }
-  header .container,
-  .footer-content {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+}
+
+/* 480px 以下，極小螢幕調整 */
+@media (max-width: 480px) {
+  /* 主圖標題再縮小 */
+  .hero-image .caption h1 {
+    font-size: 1.8rem;
   }
+
+  .hero-image .caption {
+    max-width: 95%;
+    padding: 1rem;
+  }
+
+  .hero-text {
+    bottom: 5%;
+    width: 90%;
+  }
+
+  /* 燈箱關閉按鈕縮小 */
+  .lightbox-close {
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+  }
+
+  /* 標題字體縮小 */
+  h2, .featured-works h2 {
+    font-size: 1.6rem;
+  }
+
+  section {
+    padding: 2.5rem 0;
+  }
+}
+
+/* === 解決移動設備上的溢出問題 === */
+/* 防止橫向滾動條出現 */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* 確保圖片不會溢出容器 */
+.work-item, .gallery-item, .about-image, .square-frame {
+  max-width: 100%;
+  display: block;
 }
