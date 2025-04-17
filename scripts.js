@@ -85,28 +85,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // 圖片延遲加載
-  const images = document.querySelectorAll('img');
-  if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const image = entry.target;
-          const src = image.getAttribute('data-src');
-          if (src) {
-            image.src = src;
-          }
-          imageObserver.unobserve(image);
-        }
-      });
-    });
-    
-    images.forEach(img => {
-      if (img.getAttribute('data-src')) {
-        imageObserver.observe(img);
-      }
-    });
-  }
+  // 圖片延遲加載功能已關閉
+  // 其他圖片優化選項包括:
+  // 1. 使用瀏覽器原生 loading="lazy" 屬性
+  // 2. 使用 <picture> 元素和 srcset 屬性提供不同尺寸圖片
+  // 3. 使用現代圖片格式如 WebP 和 AVIF
+  // 4. 適當調整圖片質量和尺寸，避免過大文件
+  // 5. 使用 CDN 提供圖片資源
   
   // 燈箱功能
   const lightbox = document.getElementById('lightbox');

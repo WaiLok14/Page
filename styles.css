@@ -17,36 +17,57 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 標題字體與樣式 */
+/* 標題字體與樣式 - 增強襯線效果 */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Noto Serif TC', 'Noto Serif JP', serif; /* 使用襯線字體 */
   color: #222222;
   margin-bottom: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.5px;
+  text-rendering: optimizeLegibility; /* 優化文字渲染 */
 }
 
-/* 段落使用襯線字體 */
+/* 段落使用襯線字體，增強可讀性 */
 p {
   font-family: 'Noto Serif TC', 'Noto Serif JP', serif;
+  margin-bottom: 1rem; /* 段落間距 */
 }
 
-/* 連結樣式與滑鼠懸停效果 */
+/* 連結樣式與滑鼠懸停效果 - 更平滑的動畫 */
 a {
   color: #444444;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* 改用更平滑的緩動函數 */
+  position: relative; /* 為懸停效果準備 */
 }
 
 a:hover {
-  color: #a0a0a0;
+  color: #000000; /* 懸停時顏色加深，提高對比度 */
 }
 
-/* 圖片最大寬度不超過容器，保持比例 */
+/* 圖片最大寬度不超過容器，保持比例，使用現代瀏覽器優化技術 */
+/* 建議：在 HTML 中使用 <picture> 標籤或 <img> 的 srcset 屬性提供不同尺寸和格式（如 WebP, AVIF）的圖片，以實現真正的響應式圖片和格式優化。 */
 img {
   max-width: 100%;
   height: auto;
   display: block;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); /* 添加全域圖片轉場效果 */
+  /* 使用 content-visibility 優化非視口內圖片 */
+  content-visibility: auto;
+  /* contain-intrinsic-size: auto 450px; /* 移除全局預估尺寸，避免不準確 */
+  /* 啟用GPU加速減少重繪 */
+  transform: translateZ(0);
+  /* will-change: transform; /* 移除全局 will-change，僅在需要動畫優化的地方添加 */
+}
+
+/* 為大型圖片啟用懶加載樣式 */
+img.lazy-load {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+img.lazy-load.loaded {
+  opacity: 1;
 }
 
 /* === 全局樣式 === */
@@ -327,6 +348,7 @@ nav li a.active {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   transition: transform 0.5s ease;
+  will-change: transform; /* 優化懸停縮放動畫 */
 }
 
 /* 滑鼠懸停放大圖片 */
@@ -552,6 +574,7 @@ footer {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   transition: transform 0.5s ease;
+  will-change: transform; /* 優化懸停縮放動畫 */
 }
 
 /* 懸停時上浮與陰影加深 */
@@ -688,7 +711,8 @@ footer {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.4s cubic-bezier(0.4,0,0.2,1), visibility 0.4s cubic-bezier(0.4,0,0.2,1);
+  /* Use a smoother easing function */
+  transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .lightbox.open {
@@ -708,8 +732,11 @@ footer {
   width: auto;
   max-width: 90%;
   max-height: 85vh;
-  animation: zoom 0.4s cubic-bezier(0.4,0,0.2,1);
+  /* Use a smoother easing function for the animation */
+  animation: zoom 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  /* Hint browser for performance optimization */
+  will-change: transform, opacity;
 }
 
 @keyframes zoom {
@@ -1034,3 +1061,4 @@ html, body {
   max-width: 100%;
   display: block;
 }
+
