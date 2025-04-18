@@ -948,6 +948,11 @@ footer {
   .hero-text p {
     font-size: 1rem;
   }
+    
+  /* 主圖文字位置調高 */
+  .hero-text {
+    bottom: 15%;
+  }
 
   /* 區塊間距縮小 */
   section {
