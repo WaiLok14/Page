@@ -558,6 +558,11 @@ footer {
   text-align: center;
 }
 
+.gallery-section {
+  margin-top: 80px;
+  text-align: center;
+}
+
 /* 作品集與相簿標題樣式 */
 .portfolio-section h2,
 .gallery-section h2 {
@@ -858,6 +863,31 @@ footer {
   line-height: 1.5;
   font-family: 'Noto Sans TC', 'Noto Sans JP', sans-serif;
   font-size: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 0.2rem;
+}
+
+.caption-meta-item {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+}
+
+.caption-meta-item:not(:last-child)::after {
+  content: '|';
+  margin: 0 0.55rem;
+  opacity: 0.7;
+}
+
+.caption-meta-label {
+  opacity: 0.9;
+  margin-right: 0.3em; /* 冒號後空一格 */
+}
+
+.caption-meta-value {
+  opacity: 1;
 }
 
 /* === 方形框架 === */
@@ -1062,6 +1092,10 @@ footer {
 
   .page-hero {
     padding: 100px 0 40px;
+  }
+
+  .gallery-section {
+    margin-top: calc(88px + env(safe-area-inset-top));
   }
 
   /* 頁腳內容垂直排列 */

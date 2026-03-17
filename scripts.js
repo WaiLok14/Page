@@ -24,6 +24,15 @@
 
 // 等待DOM內容完全加載
 document.addEventListener('DOMContentLoaded', function() {
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/\"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
   // 導航欄滾動效果
   const header = document.querySelector('header');
   const menuButton = document.querySelector('.menu-button');
@@ -114,10 +123,12 @@ document.addEventListener('DOMContentLoaded', function() {
         lightboxCaption.innerHTML = customCaption;
       } else {
         const meta = [];
-        if (film) meta.push(`Film: ${film}`);
-        if (camera) meta.push(`Camera: ${camera}`);
-        if (lens) meta.push(`Lens: ${lens}`);
-        lightboxCaption.innerHTML = meta.join(' | ');
+        if (film) meta.push({ label: 'Film', value: film });
+        if (camera) meta.push({ label: 'Camera', value: camera });
+        if (lens) meta.push({ label: 'Lens', value: lens });
+        lightboxCaption.innerHTML = meta
+          .map(item => `<span class="caption-meta-item"><span class="caption-meta-label">${item.label}:</span> <span class="caption-meta-value">${escapeHtml(item.value)}</span></span>`)
+          .join('');
       }
       document.body.style.overflow = 'hidden';
     });
