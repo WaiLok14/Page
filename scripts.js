@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       header.classList.remove('scrolled');
     }
-  });
+  }, { passive: true });
   
   // 移動端選單按鈕點擊事件
   if (menuButton) {

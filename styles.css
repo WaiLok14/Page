@@ -53,12 +53,6 @@ img {
   height: auto;
   display: block;
   transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); /* 添加全域圖片轉場效果 */
-  /* 使用 content-visibility 優化非視口內圖片 */
-  content-visibility: auto;
-  /* contain-intrinsic-size: auto 450px; /* 移除全局預估尺寸，避免不準確 */
-  /* 啟用GPU加速減少重繪 */
-  transform: translateZ(0);
-  /* will-change: transform; /* 移除全局 will-change，僅在需要動畫優化的地方添加 */
 }
 
 /* 為大型圖片啟用懶加載樣式 */
@@ -965,6 +959,25 @@ footer {
   /* 容器左右間距縮小 */
   .container {
     padding: 0 1.5rem;
+  }
+
+  /* iOS/Android 滾動時避免 hero 區塊因動態 viewport 反覆重算而閃爍 */
+  .home-page .hero-image {
+    height: 100svh;
+    min-height: 100svh;
+    padding-top: calc(80px + env(safe-area-inset-top));
+    contain: paint;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* 手機首頁停用主圖 transform/transition，關閉滾動時的縮放視覺 */
+  .home-page .hero-image img {
+    transition: none;
+    transform: none !important;
+    will-change: auto;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
   
   .philosophy-grid {
