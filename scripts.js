@@ -105,7 +105,20 @@ document.addEventListener('DOMContentLoaded', function() {
     img.addEventListener('click', function() {
       lightbox.classList.add('open');
       lightboxImg.src = this.getAttribute('data-full') || this.src;
-      lightboxCaption.innerHTML = this.alt;
+      const customCaption = this.getAttribute('data-caption');
+      const film = this.getAttribute('data-film');
+      const camera = this.getAttribute('data-camera');
+      const lens = this.getAttribute('data-lens');
+
+      if (customCaption) {
+        lightboxCaption.innerHTML = customCaption;
+      } else {
+        const meta = [];
+        if (film) meta.push(`Film: ${film}`);
+        if (camera) meta.push(`Camera: ${camera}`);
+        if (lens) meta.push(`Lens: ${lens}`);
+        lightboxCaption.innerHTML = meta.join(' | ');
+      }
       document.body.style.overflow = 'hidden';
     });
   });
