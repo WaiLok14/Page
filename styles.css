@@ -283,14 +283,13 @@ nav li a.active {
 /* 主圖區域底部文字 */
 .hero-text {
   position: absolute;
-  bottom: clamp(5%, 8vw, 12%);
+  bottom: clamp(5%, 8vh, 12%);
   left: 50%;
   transform: translateX(-50%);
   color: #ffffff;
   text-align: center;
   z-index: 2;
   width: min(90%, 600px);
-  max-width: 600px;
 }
 
 .hero-text p {
@@ -926,6 +925,7 @@ footer {
 
   .mobile-nav {
     display: block;
+    /* 讓內容較多時可在小螢幕中垂直捲動，避免選單被裁切 */
     overflow-y: auto;
   }
 
