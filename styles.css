@@ -1059,6 +1059,53 @@ footer {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
   }
+
+  /* 直幅圖片在手機燈箱中改為流式排版，避免遮住下方 metadata */
+  .lightbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: calc(56px + env(safe-area-inset-top)) 0 calc(18px + env(safe-area-inset-bottom));
+    overflow-y: auto;
+  }
+
+  .lightbox-content {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    max-width: 92vw;
+    max-height: min(68svh, calc(100svh - 220px));
+    animation: none;
+    margin: 0;
+  }
+
+  /* 行動裝置燈箱資訊改為每個參數獨立一行，不使用分隔符 */
+  .lightbox-caption {
+    width: min(92vw, 700px);
+    max-width: 92vw;
+    margin: 0.7rem auto 0;
+    padding: 0.35rem 0 calc(0.6rem + env(safe-area-inset-bottom));
+    min-height: 0;
+    display: block;
+    text-align: center;
+    line-height: 1.65;
+  }
+
+  .caption-meta-item {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    width: 100%;
+    white-space: normal;
+    margin: 0.15rem 0;
+  }
+
+  .caption-meta-item:not(:last-child)::after {
+    content: none;
+    margin: 0;
+  }
   
   .philosophy-grid {
     grid-template-columns: repeat(2, 1fr);
