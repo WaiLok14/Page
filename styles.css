@@ -586,17 +586,19 @@ footer {
 }
 
 .album-title {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.6rem;
+  display: inline-block;
 }
 
 .album-subtitle {
+  display: block;
   font-family: 'Noto Sans TC', 'Noto Sans JP', sans-serif;
   font-size: 0.8rem;
   font-weight: 400;
   color: #7d7d7d;
   letter-spacing: 0.6px;
+  text-align: center;
+  margin-top: -1.8rem;
+  margin-bottom: 2.4rem;
 }
 
 /* 相簿網格自適應欄數 */
